@@ -1,6 +1,5 @@
 import logging
 import multiprocessing
-import random
 import time
 
 logger = logging.getLogger(__name__)
@@ -91,7 +90,7 @@ class Process(multiprocessing.Process):
             if not result:
                 self.logger.warning(f"Command failure in task '{self.task.uri()}'.")
                 success = False
-        except Exception as e:  # TODO let KeyboardInterrupt and others bubble up
+        except Exception:  # TODO let KeyboardInterrupt and others bubble up
             self.logger.exception(f"Unhandled exception in task '{self.task.uri()}'.")
             success = False
         self.status_queue.put(success)
