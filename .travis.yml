@@ -6,3 +6,12 @@ install:
 - pip install -r test-requirements.txt
 script:
 - make test
+deploy:
+  provider: pypi
+  user: ecdavis
+  password:
+    secure: DjbhUkv0DNJmaw8NZIM60Gmlf/C6wuJweAcR+IXvaW9w1vp4b+cbHyaHmM4D7rzHeNsOdCBVGz7l2ZUeG1AQ5ykUVxfsM/Rd5yvLd6PIwj104s+O5bVsl7RQmUA2V5bOkijGbQZ/khMiMwgiSR5LYOKfDQNPJGTmiLu8uSO5AW2QnNtfn8fowgdoQo46K9ZHITr8E+f9UPTV5IwdZgGZE5OYv7j0gKLp/32ZeYtvH77Nw0Q4KcNsHht7czMM9q0O2NHabfp4EDZPAXyl9kSKhkrhWVojSK5z59MhftAfZnmO3l6TyveSZjvXFIbXzFAReYgbjzn/AzcbM2P5X0GGBx/MkyyR43Zi7vgGlqAOWYGv7QDu1KHV8hco8LnuWq2fetnEeO7aDwAKre4DF3Md25AXnygd7auToI0keYvpw2Wty6VRoZtfkhD3bVPSk9n5FvEk+797XmGvr1Vr/4Qrnq71UqIJGt+siQzyXJ7ethAZlAWAYObItHeYfcxwWrc4IBTcVv5Xda5qua+dp74mRkyk+ceDyj4tj4I12Czs60Zhej/FsA0j8blCrcrrSxQKaHHWfvgVeKY8MXAnP/wkhvqLANrrEhxahejy7DgGJ5K7ZAPbSEx7A+LJOic9Djq/THAbzLC6Sk+aEnc3Ty3Wq/V/azYeT3Ssfn2no80XsIc=
+  on:
+    tags: true
+    distributions: sdist bdist_wheel
+    repo: ecdavis/multiprocessing_dag
